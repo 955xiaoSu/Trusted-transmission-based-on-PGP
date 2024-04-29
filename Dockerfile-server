@@ -1,0 +1,28 @@
+FROM ubuntu:22.04
+
+# Set the working directory
+WORKDIR /app
+
+# Copy all files from the current directory to the working directory
+COPY ./src/server_receive.py .
+COPY ./src/decode_compressed_message.py .
+COPY ./src/decompress.py .
+COPY ./src/extract_plaintext_and_verify_signature.py .
+COPY ./src/acknowledge.py .
+COPY ./src/server_send.py .
+COPY ./server_run.sh .
+COPY ./README .
+COPY ./src/receiver_file ./receiver_file
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install essential packages
+RUN apt-get update && apt-get install -y \
+    python3.11 \
+    python3-pip 
+
+RUN chmod u+x server_run.sh 
+
+EXPOSE 5001
+
+CMD ["bash"]

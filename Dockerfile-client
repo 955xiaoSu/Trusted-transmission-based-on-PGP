@@ -1,0 +1,28 @@
+FROM ubuntu:22.04
+
+# Set the working directory
+WORKDIR /app
+
+# Copy all files from the current directory to the working directory
+COPY ./src/generate_plaintext_and_hash.py .
+COPY ./src/sender_file ./sender_file
+COPY ./src/compress_message_and_signature.py .
+COPY ./src/encode_compressed_message.py .
+COPY ./src/client_send.py .
+COPY ./src/client_receive.py .
+COPY ./src/verify_acknowledgement.py .
+COPY ./client_run.sh .
+COPY ./README .
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install essential packages
+RUN apt-get update && apt-get install -y \
+    python3.11 \
+    python3-pip 
+
+RUN chmod u+x client_run.sh 
+
+EXPOSE 5001
+
+CMD ["bash"]
