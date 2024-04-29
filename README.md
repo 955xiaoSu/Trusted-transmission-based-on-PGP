@@ -26,13 +26,13 @@ Make sure it has opened before running the script above. And change the IP addre
 the `client_send.py` according to your requirement.
 
 We also want to containerize the client and server code into separate Docker containers. To help 
-you with this, we have prepared a script called build_docker.sh that you can use to build the containers when needed.
+you with this, we have prepared a prototype script called `build_and_execute_client.sh && build_and_execute_server.sh` that you can use to build the docker containers when needed.
 
 By the way, If you encouter the network error, maybe you can try `tcpdump -i <Network Adaptor> -w <output file>`,
 and then analyze the output file in Wireshark to find the problem.
 
 For convenience, we pass the process of generating and exchanging keys between client and server,
-but we provide interface for generating keys which you can find in `sigh_hash.py` -> `generateKeys()`.
+but we do provide interface for generating keys which you can find in `sigh_hash.py` -> `generateKeys()`.
 
 Be careful, you should allocate enough memory for the server, because the server will handle 
 large files when decompressing. Otherwise, you may receive a SIGKILL signal like the following:
