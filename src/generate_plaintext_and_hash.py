@@ -4,7 +4,7 @@ import concurrent.futures
 
 # Writes the content of "basical_plaintext.txt" to the "plaintext.txt" file 120000 times.
 def writeToFile(basical_plaintext, plaintext):
-    for _ in range(1):
+    for _ in range(15000):
         plaintext.write(basical_plaintext)
 
 # Creates a ThreadPoolExecutor and submits the writeToFile function to the executor 8 times.   
@@ -12,7 +12,7 @@ def generatePlaintext(basical_plaintext, plaintext):
     with concurrent.futures.ThreadPoolExecutor() as executor:
         # Create 8 threads to write to the file
         # which can be modified according to the machine's CPU
-        for _ in range(1):
+        for _ in range(8):
             executor.submit(writeToFile, basical_plaintext, plaintext)
 
 # Computes the hash value of the "plaintext.txt" file and returns it.
