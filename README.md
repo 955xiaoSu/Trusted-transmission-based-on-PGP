@@ -6,6 +6,8 @@ with Python 3.10 and above.
 
 This project is finished by *Kaisuping*, *Cuefe* and *Faith*.
 
+![Design](./design.png)
+
 # Usage
 Before use, add permissions to the shell scripts:
 - `chmod u+x local_run.sh`
