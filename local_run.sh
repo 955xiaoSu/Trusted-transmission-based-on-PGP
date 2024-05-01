@@ -32,5 +32,3 @@ commands=(
 for cmd in "${commands[@]}"; do
     timer $cmd
 done
-
-#
