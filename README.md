@@ -6,6 +6,7 @@ with Python 3.10 and above.
 
 This project is finished by *Kaisuping*, *Cuefe* and *Faith*.
 
+Our design is shown as below:
 ![Design](./design.png)
 
 # Usage
