@@ -12,12 +12,11 @@ timer() {
 }
 
 commands=(
-    "python3 ./generate_plaintext_and_hash.py"
-    
     # Necessary for windows sender
     # In order to convert "CRLF" -> "LF"
-    "dos2unix ./sender_file/plaintext.txt"
-    
+    "dos2unix ./sender_file/basical_plaintext.txt"
+
+    "python3 ./generate_plaintext_and_hash.py" 
     "python3 ./compress_message_and_signature.py"
     "python3 ./encode_compressed_message.py"
     "cp ./sender_file/encrypted_message_and_symmetric_key.txt ./receiver_file/encrypted_message_and_symmetric_key.txt"
@@ -33,3 +32,5 @@ commands=(
 for cmd in "${commands[@]}"; do
     timer $cmd
 done
+
+#
