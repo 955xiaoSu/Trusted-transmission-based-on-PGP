@@ -7,7 +7,7 @@ with Python 3.10 and above.
 This project is finished by *Kaisuping*, *Cuefe* and *Faith*.
 
 Our design is shown as below:
-![Design](./design.png)
+<img src="./design.png" alt="Image" width="300">
 
 # Usage
 Before use, add permissions to the shell scripts:
